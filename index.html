@@ -1,0 +1,387 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2575.4">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; min-height: 14.0px}
+  </style>
+</head>
+<body>
+<p class="p1">&lt;!DOCTYPE html&gt;</p>
+<p class="p1">&lt;html lang="en"&gt;</p>
+<p class="p1">&lt;head&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;meta charset="UTF-8"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;meta name="mobile-web-app-capable" content="yes"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;meta name="apple-mobile-web-app-capable" content="yes"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;title&gt;Voice Inventory Logger&lt;/title&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;style&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>/* Basic CSS for styling */</p>
+<p class="p1"><span class="Apple-converted-space">        </span>body {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";</p>
+<p class="p1"><span class="Apple-converted-space">            </span>display: flex;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>justify-content: center;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>align-items: center;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>min-height: 95vh; /* Use min-height */</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background-color: #f0f2f5; /* Light grey background */</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin: 0;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding: 15px; /* Add padding */</p>
+<p class="p1"><span class="Apple-converted-space">            </span>box-sizing: border-box; /* Include padding in element's total width and height */</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: #1c1e21; /* Default text color */</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.container {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>text-align: center;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background-color: #ffffff; /* White background for container */</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding: 25px 30px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-radius: 12px; /* Softer corners */</p>
+<p class="p1"><span class="Apple-converted-space">            </span>box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Subtle shadow */</p>
+<p class="p1"><span class="Apple-converted-space">            </span>width: 100%; /* Make container responsive */</p>
+<p class="p1"><span class="Apple-converted-space">            </span>max-width: 450px; /* Constrain max width */</p>
+<p class="p1"><span class="Apple-converted-space">            </span>box-sizing: border-box;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>h1 {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: #1c1e21; /* Darker heading */</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin-bottom: 25px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-size: 1.8em;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>#micButton {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-size: 3.5em; /* Slightly smaller icon */</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding: 20px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-radius: 50%;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border: none;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background: linear-gradient(145deg, #007bff, #0056b3); /* Gradient blue */</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: white;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>cursor: pointer;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>transition: background 0.3s ease, box-shadow 0.2s ease;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>line-height: 1; /* Ensure icon is centered vertically */</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin-bottom: 25px; /* Add space below button */</p>
+<p class="p1"><span class="Apple-converted-space">            </span>box-shadow: 0 2px 5px rgba(0, 91, 179, 0.4); /* Blue shadow */</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>#micButton:hover, #micButton:focus {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background: linear-gradient(145deg, #0069d9, #004a99); /* Darker gradient on hover */</p>
+<p class="p1"><span class="Apple-converted-space">            </span>box-shadow: 0 4px 8px rgba(0, 91, 179, 0.5);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>outline: none; /* Remove default focus outline */</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>#micButton:active {</p>
+<p class="p1"><span class="Apple-converted-space">             </span>background: linear-gradient(145deg, #0056b3, #003a75); /* Even darker when pressed */</p>
+<p class="p1"><span class="Apple-converted-space">             </span>box-shadow: 0 1px 3px rgba(0, 91, 179, 0.3);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>#micButton.listening {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background: linear-gradient(145deg, #dc3545, #a71d2a); /* Red gradient when listening */</p>
+<p class="p1"><span class="Apple-converted-space">            </span>box-shadow: 0 2px 5px rgba(167, 29, 42, 0.4);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>#micButton.listening:hover, #micButton.listening:focus {</p>
+<p class="p1"><span class="Apple-converted-space">             </span>background: linear-gradient(145deg, #c82333, #941a25);</p>
+<p class="p1"><span class="Apple-converted-space">             </span>box-shadow: 0 4px 8px rgba(167, 29, 42, 0.5);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">         </span>#micButton.listening:active {</p>
+<p class="p1"><span class="Apple-converted-space">             </span>background: linear-gradient(145deg, #a71d2a, #7c151e);</p>
+<p class="p1"><span class="Apple-converted-space">             </span>box-shadow: 0 1px 3px rgba(167, 29, 42, 0.3);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>#status {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin-top: 20px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-size: 1em;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: #555e6a; /* Greyish text */</p>
+<p class="p1"><span class="Apple-converted-space">            </span>min-height: 1.2em; /* Prevent layout shift */</p>
+<p class="p1"><span class="Apple-converted-space">            </span>line-height: 1.4;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>#transcript {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin-top: 10px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-size: 0.95em;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: #333a40;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-style: italic;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>min-height: 1.1em;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>word-wrap: break-word; /* Wrap long transcripts */</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>#errorLog {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin-top: 15px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-size: 0.9em;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: #dc3545; /* Red for errors */</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-weight: bold;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>min-height: 1.1em;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/style&gt;</p>
+<p class="p1">&lt;/head&gt;</p>
+<p class="p1">&lt;body&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="container"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;h1&gt;RSLP Inventory&lt;/h1&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;button id="micButton" aria-label="Start Listening"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>🎤 &lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div id="status"&gt;Tap the mic and speak (e.g., "Beef Stock 6 actual" or "Yuzu 3 prep")&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div id="transcript"&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div id="errorLog"&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;script&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>// --- ELEMENTS ---</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const micButton = document.getElementById('micButton');</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const statusDiv = document.getElementById('status');</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const transcriptDiv = document.getElementById('transcript');</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const errorLogDiv = document.getElementById('errorLog');</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>// --- CONFIGURATION ---</p>
+<p class="p1"><span class="Apple-converted-space">        </span>// !!! This URL points to your deployed Google Apps Script !!!</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwU0_y8Ui9bgyIluJHuTL7KhdcKZ1KkqZ4rQ6hn5yeKVrQy2eeKNtrrZRz5z3zDNP6cWw/exec';</p>
+<p class="p1"><span class="Apple-converted-space">        </span>// ---------------------</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>// --- SPEECH RECOGNITION SETUP ---</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>let recognition;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>if (SpeechRecognition) {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>recognition = new SpeechRecognition();</p>
+<p class="p1"><span class="Apple-converted-space">            </span>recognition.continuous = false; // Process single utterances (user taps mic for each entry)</p>
+<p class="p1"><span class="Apple-converted-space">            </span>recognition.lang = 'en-US'; <span class="Apple-converted-space">    </span>// Set language (adjust if needed)</p>
+<p class="p1"><span class="Apple-converted-space">            </span>recognition.interimResults = false; // We only want final results</p>
+<p class="p1"><span class="Apple-converted-space">            </span>recognition.maxAlternatives = 1;<span class="Apple-converted-space">    </span>// Get the single most likely interpretation</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>// --- EVENT LISTENERS ---</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>// Mic Button Click Handler</p>
+<p class="p1"><span class="Apple-converted-space">            </span>micButton.addEventListener('click', () =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>if (micButton.classList.contains('listening')) {</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>// If already listening, stop it</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>recognition.stop();</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>// UI updates are handled in onend</p>
+<p class="p1"><span class="Apple-converted-space">                </span>} else {</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>// If not listening, start it</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>clearMessages();</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>try {</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>recognition.start();</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>updateUI('listening'); // Update UI immediately</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>} catch (error) {</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>// Handle edge cases like trying to start while already starting</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>console.error("Recognition start error:", error);</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>updateUI('error', 'Mic busy or error starting.');</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">                </span>}</p>
+<p class="p1"><span class="Apple-converted-space">            </span>});</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>// Speech Recognition Result Handler</p>
+<p class="p1"><span class="Apple-converted-space">            </span>recognition.onresult = (event) =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>const speechResult = event.results[0][0].transcript.trim();</p>
+<p class="p1"><span class="Apple-converted-space">                </span>transcriptDiv.textContent = `Heard: "${speechResult}"`;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>console.log('Confidence: ' + event.results[0][0].confidence);</p>
+<p class="p1"><span class="Apple-converted-space">                </span>updateUI('processing'); // Show processing status</p>
+<p class="p1"><span class="Apple-converted-space">                </span>parseAndSendData(speechResult);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>};</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>// Called when speech engine stops listening</p>
+<p class="p1"><span class="Apple-converted-space">            </span>recognition.onspeechend = () =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>// Optionally stop recognition explicitly if needed, but usually handled by onend</p>
+<p class="p1"><span class="Apple-converted-space">                 </span>recognition.stop();</p>
+<p class="p1"><span class="Apple-converted-space">                 </span>// UI update will happen in onend</p>
+<p class="p1"><span class="Apple-converted-space">            </span>};</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>// Called when recognition service disconnects (manually or automatically)</p>
+<p class="p1"><span class="Apple-converted-space">            </span>recognition.onend = () =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>// Ensure UI is reset unless it's in a processing/error state from onresult/onerror</p>
+<p class="p1"><span class="Apple-converted-space">                </span>if (!statusDiv.textContent.startsWith('Sending') &amp;&amp; !statusDiv.textContent.startsWith('Success') &amp;&amp; !statusDiv.textContent.startsWith('Error')) {</p>
+<p class="p1"><span class="Apple-converted-space">                   </span>updateUI('idle');</p>
+<p class="p1"><span class="Apple-converted-space">                </span>}</p>
+<p class="p1"><span class="Apple-converted-space">            </span>};</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>// Speech Recognition Error Handler</p>
+<p class="p1"><span class="Apple-converted-space">            </span>recognition.onerror = (event) =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>let errorMessage = `Error: ${event.error}`;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>switch (event.error) {</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>case 'no-speech':</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>errorMessage = "Didn't hear anything. Please tap and speak clearly.";</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>break;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>case 'network':</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>errorMessage = "Network error. Check connection and try again.";</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>break;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>case 'not-allowed':</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>case 'service-not-allowed':</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>errorMessage = "Mic access denied. Please allow microphone permissions in browser settings.";</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>break;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>case 'audio-capture':</p>
+<p class="p1"><span class="Apple-converted-space">                         </span>errorMessage = "Audio capture failed. Is the microphone working?";</p>
+<p class="p1"><span class="Apple-converted-space">                         </span>break;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>default:</p>
+<p class="p1"><span class="Apple-converted-space">                         </span>errorMessage = `Recognition error: ${event.error}. Please try again.`;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>}</p>
+<p class="p1"><span class="Apple-converted-space">                </span>console.error("Recognition error details:", event);</p>
+<p class="p1"><span class="Apple-converted-space">                </span>updateUI('error', errorMessage); // Display specific error</p>
+<p class="p1"><span class="Apple-converted-space">            </span>};</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>} else {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>// Browser doesn't support Speech Recognition API</p>
+<p class="p1"><span class="Apple-converted-space">            </span>updateUI('error', "Sorry, your browser doesn't support the Web Speech API. Try Chrome or Safari.");</p>
+<p class="p1"><span class="Apple-converted-space">            </span>micButton.disabled = true;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>micButton.style.background = '#ccc'; // Grey out button</p>
+<p class="p1"><span class="Apple-converted-space">            </span>micButton.style.cursor = 'not-allowed';</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>// --- HELPER FUNCTIONS ---</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>/**</p>
+<p class="p1"><span class="Apple-converted-space">         </span>* Updates the UI elements (button, status, error log) based on the current state.</p>
+<p class="p1"><span class="Apple-converted-space">         </span>* @param {string} state - 'idle', 'listening', 'processing', 'success', 'error'</p>
+<p class="p1"><span class="Apple-converted-space">         </span>* @param {string} [message=''] - Optional message for status or error log.</p>
+<p class="p1"><span class="Apple-converted-space">         </span>*/</p>
+<p class="p1"><span class="Apple-converted-space">        </span>function updateUI(state, message = '') {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>micButton.classList.remove('listening'); // Remove class by default</p>
+<p class="p1"><span class="Apple-converted-space">            </span>micButton.disabled = false; // Enable by default</p>
+<p class="p1"><span class="Apple-converted-space">            </span>micButton.setAttribute('aria-label', 'Start Listening');</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>switch (state) {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>case 'idle':</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>statusDiv.textContent = 'Tap the mic and speak...';</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>break;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>case 'listening':</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>statusDiv.textContent = 'Listening...';</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>micButton.classList.add('listening');</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>micButton.setAttribute('aria-label', 'Stop Listening');</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>break;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>case 'processing':</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>statusDiv.textContent = 'Processing...';</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>micButton.disabled = true; // Disable button while processing speech</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>break;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>case 'sending':</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>statusDiv.textContent = `Sending: ${message}...`;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>micButton.disabled = true; // Disable button while sending</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>break;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>case 'success':</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>statusDiv.textContent = `Success: ${message}`;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>// Keep button enabled for next entry</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>break;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>case 'error':</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>statusDiv.textContent = 'Error Occurred';</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>errorLogDiv.textContent = message;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>// Keep button enabled to allow retry</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>break;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>/** Clears the transcript and error messages. */</p>
+<p class="p1"><span class="Apple-converted-space">        </span>function clearMessages() {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>transcriptDiv.textContent = '';</p>
+<p class="p1"><span class="Apple-converted-space">            </span>errorLogDiv.textContent = '';</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>/**</p>
+<p class="p1"><span class="Apple-converted-space">         </span>* Parses the spoken text to extract item name, quantity, and type.</p>
+<p class="p1"><span class="Apple-converted-space">         </span>* Sends the parsed data to the Google Apps Script backend.</p>
+<p class="p1"><span class="Apple-converted-space">         </span>* @param {string} text - The transcript from speech recognition.</p>
+<p class="p1"><span class="Apple-converted-space">         </span>*/</p>
+<p class="p1"><span class="Apple-converted-space">        </span>function parseAndSendData(text) {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>if (!text) {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>updateUI('error', 'Received empty text.');</p>
+<p class="p1"><span class="Apple-converted-space">                </span>return;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>let quantity = null;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>let type = 'actual'; // Default to actual</p>
+<p class="p1"><span class="Apple-converted-space">            </span>let itemName = text.toLowerCase().trim(); // Work with lowercase, trimmed text</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>// Regex to find the last number (integer or decimal) possibly followed by 'actual' or 'prep'</p>
+<p class="p1"><span class="Apple-converted-space">            </span>// Allows for optional space between number and keyword</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const match = itemName.match(/^(.*?)\s*(\d+(\.\d+)?)\s*(actual|prep)?\s*$/);</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>if (match) {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>itemName = match[1].trim(); // Text before the number</p>
+<p class="p1"><span class="Apple-converted-space">                </span>quantity = parseFloat(match[2]); // The number</p>
+<p class="p1"><span class="Apple-converted-space">                </span>if (match[4]) { // If 'actual' or 'prep' was captured</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>type = match[4];</p>
+<p class="p1"><span class="Apple-converted-space">                </span>}</p>
+<p class="p1"><span class="Apple-converted-space">            </span>} else {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>// Fallback: Try finding just the last number if the pattern above fails</p>
+<p class="p1"><span class="Apple-converted-space">                </span>const quantityMatchFallback = text.match(/(\d+(\.\d+)?)\s*$/);</p>
+<p class="p1"><span class="Apple-converted-space">                 </span>if (quantityMatchFallback) {</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>quantity = parseFloat(quantityMatchFallback[1]);</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>itemName = text.substring(0, quantityMatchFallback.index).trim().toLowerCase();</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>// Check for keywords immediately before the number in this fallback scenario</p>
+<p class="p1"><span class="Apple-converted-space">                     </span>if (itemName.endsWith(' prep')) {</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>type = 'prep';</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>itemName = itemName.substring(0, itemName.length - 5).trim();</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>} else if (itemName.endsWith(' actual')) {</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>type = 'actual';</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>itemName = itemName.substring(0, itemName.length - 7).trim();</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">                 </span>} else {</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>updateUI('error', `Couldn't find quantity in "${text}". Say e.g., "Item Name 5 actual".`);</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>return;</p>
+<p class="p1"><span class="Apple-converted-space">                 </span>}</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>// Final validation after parsing attempts</p>
+<p class="p1"><span class="Apple-converted-space">            </span>if (!itemName || quantity === null || isNaN(quantity)) {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>updateUI('error', `Failed to parse "${text}". Check format.`);</p>
+<p class="p1"><span class="Apple-converted-space">                </span>return;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>const data = {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>item_name: itemName,</p>
+<p class="p1"><span class="Apple-converted-space">                </span>quantity: quantity,</p>
+<p class="p1"><span class="Apple-converted-space">                </span>type: type</p>
+<p class="p1"><span class="Apple-converted-space">            </span>};</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>console.log('Parsed Data:', data);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>updateUI('sending', `${itemName} ${quantity} ${type}`); // Update status to sending</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>// --- SEND DATA TO GOOGLE APPS SCRIPT ---</p>
+<p class="p1"><span class="Apple-converted-space">            </span>fetch(GOOGLE_SCRIPT_URL, {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>method: 'POST',</p>
+<p class="p1"><span class="Apple-converted-space">                </span>mode: 'cors', // Required for cross-origin requests to Apps Script web app</p>
+<p class="p1"><span class="Apple-converted-space">                </span>cache: 'no-cache', // Don't cache the request</p>
+<p class="p1"><span class="Apple-converted-space">                </span>headers: {</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>// Sending as plain text which Apps Script reads via e.postData.contents</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>// Content-Type 'application/json' can sometimes cause issues with simple Apps Script doPost</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>'Content-Type': 'text/plain',</p>
+<p class="p1"><span class="Apple-converted-space">                </span>},</p>
+<p class="p1"><span class="Apple-converted-space">                 </span>// Stringify the JSON data to send as the request body</p>
+<p class="p1"><span class="Apple-converted-space">                </span>body: JSON.stringify(data)</p>
+<p class="p1"><span class="Apple-converted-space">            </span>})</p>
+<p class="p1"><span class="Apple-converted-space">            </span>.then(response =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>// Check if the response status is ok (e.g., 200)</p>
+<p class="p1"><span class="Apple-converted-space">                </span>if (!response.ok) {</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>// If not ok, try to read the response text for an error message from Apps Script</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>return response.text().then(text =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>// Throw an error that includes the status text and the response body</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>throw new Error(`Network Error: ${response.status} ${response.statusText}. Server: ${text}`);</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>});</p>
+<p class="p1"><span class="Apple-converted-space">                </span>}</p>
+<p class="p1"><span class="Apple-converted-space">                </span>// If response is ok, parse the JSON body</p>
+<p class="p1"><span class="Apple-converted-space">                </span>return response.json();</p>
+<p class="p1"><span class="Apple-converted-space">            </span>})</p>
+<p class="p1"><span class="Apple-converted-space">            </span>.then(result =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>// Handle the JSON response from Apps Script</p>
+<p class="p1"><span class="Apple-converted-space">                </span>console.log('Server Response:', result);</p>
+<p class="p1"><span class="Apple-converted-space">                </span>if (result.status === 'success') {</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>updateUI('success', result.message); // Show success message from server</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>// Optional: Clear transcript after a short delay</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>// setTimeout(() =&gt; { transcriptDiv.textContent = ''; }, 3000);</p>
+<p class="p1"><span class="Apple-converted-space">                </span>} else {</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>// If the server reported an error in its JSON response</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>updateUI('error', `Server Error: ${result.message || 'Unknown error.'}`);</p>
+<p class="p1"><span class="Apple-converted-space">                </span>}</p>
+<p class="p1"><span class="Apple-converted-space">            </span>})</p>
+<p class="p1"><span class="Apple-converted-space">            </span>.catch((error) =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>// Handle network errors or errors thrown during response processing</p>
+<p class="p1"><span class="Apple-converted-space">                </span>console.error('Fetch Error:', error);</p>
+<p class="p1"><span class="Apple-converted-space">                </span>updateUI('error', `Failed to send: ${error.message}. Check URL &amp; connection.`);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>});</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/script&gt;</p>
+<p class="p1">&lt;/body&gt;</p>
+<p class="p1">&lt;/html&gt;</p>
+</body>
+</html>
